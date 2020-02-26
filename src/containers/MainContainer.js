@@ -4,7 +4,7 @@ import PortfolioContainer from './PortfolioContainer'
 import SearchBar from '../components/SearchBar'
 
 class MainContainer extends Component {
-
+  
   render() {
     return (
       <div>
@@ -13,12 +13,20 @@ class MainContainer extends Component {
           <div className="row">
             <div className="col-8">
 
-              <StockContainer/>
+              <StockContainer 
+                stocks = {this.props.stocksArray}
+                addStock = {this.props.addStock}
+                removeStock = {this.props.removeStock}
+              />
 
             </div>
             <div className="col-4">
 
-              <PortfolioContainer/>
+              <PortfolioContainer 
+                portfolio = {this.props.portfolio}
+                stocks = {this.props.stocksArray}
+                removeStock = {this.props.removeStock}
+              />
 
             </div>
           </div>
